@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Mamatha Sri S Portfolio</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            margin: 0;
+            transition: 0.3s;
+            background: #f4f4f4;
+        }
+
+        .dark {
+            background: #121212;
+            color: white;
+        }
+
+        header {
+            background: #111;
+            color: white;
+            text-align: center;
+            padding: 40px;
+        }
+
+        img {
+            width: 120px;
+            border-radius: 50%;
+        }
+
+        nav {
+            background: #333;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            margin: 10px;
+            text-decoration: none;
+        }
+
+        section {
+            padding: 20px;
+            margin: 20px;
+            background: white;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+
+        .dark section {
+            background: #1e1e1e;
+        }
+
+        section:hover {
+            transform: scale(1.02);
+        }
+
+        .project {
+            background: #eee;
+            padding: 15px;
+            margin-top: 10px;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+
+        .project:hover {
+            transform: translateY(-8px);
+        }
+
+        .bar {
+            background: #ccc;
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 10px 0;
+        }
+
+        .fill {
+            height: 10px;
+            background: #00adb5;
+        }
+
+        button, a.button {
+            padding: 10px 20px;
+            margin: 10px;
+            cursor: pointer;
+            border: none;
+            background: black;
+            color: white;
+            text-decoration: none;
+            display: inline-block;
+            transition: 0.3s;
+        }
+
+        button:hover, a.button:hover {
+            background: #00adb5;
+            transform: scale(1.1);
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #111;
+            color: white;
+        }
+
+        /* Mobile Responsive */
+        @media(max-width:600px) {
+            section {
+                margin: 10px;
+            }
+            img {
+                width: 90px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>Mamatha Sri S</h1>
+    <p id="typing"></p>
+    <img src="photo.jpeg">
+    <br><br>
+
+    <!-- Resume Download -->
+    <a href="resume.pdf" download class="button">Download Resume</a>
+
+    <button onclick="toggleDark()">Dark Mode</button>
+</header>
+
+<nav>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<section id="about">
+    <h2>About Me</h2>
+    <p>I am a passionate Java Full Stack Developer with a strong foundation in building scalable web applications and a growing interest in Data Science. I specialize in developing end-to-end solutions using modern frontend and backend technologies, with a focus on performance, usability, and clean architecture.Alongside full stack development, I have experience in data analysis and machine learning concepts, enabling me to build applications that are not only functional but also data-driven. I enjoy solving real-world problems by integrating backend logic with meaningful insights from data.I am eager to contribute to innovative teams where I can apply my development skills while continuously learning and evolving in both full stack and data-oriented domains.</p>
+</section>
+
+<section id="skills">
+    <h2>Skills</h2>
+
+    Java
+    <div class="bar"><div class="fill" style="width:90%"></div></div>
+
+    HTML/CSS
+    <div class="bar"><div class="fill" style="width:85%"></div></div>
+
+    JavaScript
+    <div class="bar"><div class="fill" style="width:75%"></div></div>
+
+    MySQL
+    <div class="bar"><div class="fill" style="width:80%"></div></div>
+
+</section>
+
+<section id="projects">
+    <h2>Projects</h2>
+
+    <div class="project">
+        <h3>HireIQ AI Resume Screening System</h3>
+        <p>
+Developed a full stack web application to automate the resume screening process using intelligent filtering techniques. 
+The system analyzes resumes and extracts relevant information to evaluate candidates based on predefined criteria. 
+Designed a responsive frontend for resume uploads and implemented backend logic for processing and analyzing data. 
+This project improves recruitment efficiency by reducing manual effort and enabling faster candidate shortlisting.
+</p>
+
+ <ul>
+      <li>Resume upload and processing</
+li>
+<li>Data extraction and filtering</li>
+<li>Candidate ranking system</li>
+<li>Improved recruitment efficiency</li>
+</ul>
+<p><b>Technologies:</b> HTML,CSS,JavaScript,Java,Spring Boot,Python,MySQL</p>
+        <a href="https://ms7972665.github.io/HireIQ-AI-Powered-Resume-Screening-System/" class="button" target="_blank">GitHub</a>
+    </div>
+
+    <div class="project">
+        <h3>Expense Tracker</h3>
+        <p>Developed a full stack web application to manage daily expenses and income.The system allows users to track transactions,categorize spending,and view financial summaries.</p>
+<ul>
+<li>Add and manage expense records</li>
+<li>Track income and balance</li>
+<li>Categorize transactions</li>
+<li>Responsive user interface</li>
+</ul>
+<p><b>Technologies:</b> HTML,CSS,JavaScript,MySQL,Spring Boot</p>
+        <a href="https://ms7972665.github.io/Expense-Tracker/" class="button" target="_blank">GitHub</a>
+    </div>
+
+</section>
+
+<section id="contact">
+    <h2>Contact</h2>
+    <p>Phone number: 6381520658</p>
+    <p>Email: ms7972665@gmail.com</p>
+
+    <!-- Social Links -->
+    <a href="https://www.linkedin.com/in/mamatha-sri-srinivasulu-255931309" class="button">LinkedIn</a>
+    <a href="https://github.com/ms7972665" class="button">GitHub</a>
+</section>
+
+<footer>
+    <p>© 2026 Mamatha Sri Portfolio</p>
+</footer>
+
+<script>
+    let text = "Java Full Stack Developer | Data Enthusiast";
+    let i = 0;
+
+    function typing() {
+        if (i < text.length) {
+            document.getElementById("typing").innerHTML += text.charAt(i);
+            i++;
+            setTimeout(typing, 50);
+        }
+    }
+    typing();
+
+    function toggleDark() {
+        document.body.classList.toggle("dark");
+    }
+</script>
+
+</body>
+</html>
